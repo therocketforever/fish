@@ -1,0 +1,12 @@
+if test -e ~/.homebrew/etc/autojump.fish
+  . ~/.homebrew/etc/autojump.fish
+end
+
+set -x PATH ~/.homebrew/bin ~/.homebrew/sbin ~/.rbenv/bin ~/.rbenv/shims $PATH
+
+set -gx RBENV_ROOT ~/.rbenv
+#. (rbenv init -|psub)
+
+rbenv rehash >dev/null ^&1
+
+test -s /Users/kaze/.nvm-fish/nvm.fish; and source /Users/kaze/.nvm-fish/nvm.fish
